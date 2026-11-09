@@ -138,6 +138,7 @@ export default function EnquiryProvider({ lang, text, areas, children }: Props) 
           {status === "success" ? (
             <div className="modal-done" role="status">
               <p className="modal-success">{text.success}</p>
+              <p className="modal-success-note">{text.successNote}</p>
               <button type="button" className="btn" onClick={close} autoFocus>
                 {text.close}
               </button>

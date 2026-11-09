@@ -27,9 +27,9 @@ export type PracticeArea = {
   title: string;
   text: string;
   intro: string[];
-  listTitle: string;
-  services: string[];
-  closing: string;
+  listTitle?: string; // opciono: oblasti bez liste usluga imaju samo uvodni tekst
+  services?: string[];
+  closing?: string;
 };
 
 export type Content = {
@@ -54,7 +54,7 @@ export type Content = {
     langLabel: string;
     langNames: { sr: string; en: string };
   };
-  hero: { eyebrow: string; title: string; text: string; cta: string };
+  hero: { eyebrow: string; title: string; paragraphs: string[]; cta: string };
   about: { title: string; paragraphs: string[]; more: string };
   people: {
     title: string;
@@ -67,6 +67,7 @@ export type Content = {
     enquiryCta: string;
     learnMore: string;
     back: string;
+    backToAreas: string;
     items: PracticeArea[];
   };
   aboutPage: {
@@ -104,9 +105,10 @@ export type Content = {
     close: string;
     closeLabel: string;
     success: string;
+    successNote: string;
     errors: { generic: string; config: string; invalid: string; rate: string };
   };
-  blog: { title: string; empty: string; back: string };
+  blog: { title: string; readMore: string; backToBlog: string; authorLabel: string; otherTitle: string };
   footer: { text: string };
 };
 
@@ -141,7 +143,10 @@ export const content: Record<Locale, Content> = {
     hero: {
       eyebrow: "Advokatska kancelarija",
       title: "Rešenja koja\nstvaraju vrednost",
-      text: "Pružamo pravnu podršku pojedincima i privrednim društvima u složenim imovinskopravnim, građevinskim i drugim pravnim pitanjima.",
+      paragraphs: [
+        "Pružamo pravnu podršku pojedincima i privrednim društvima u složenim imovinskopravnim, građevinskim i drugim pravnim pitanjima.",
+        "Svaki predmet posmatramo iz šire perspektive, uz razumevanje pravnih, poslovnih i praktičnih okolnosti. Naš cilj nije samo da identifikujemo pravni problem, već da pronađemo delotvorno rešenje koje odgovara stvarnim potrebama klijenta.",
+      ],
       cta: "Kontaktirajte nas",
     },
     about: {
@@ -161,14 +166,14 @@ export const content: Record<Locale, Content> = {
           name: "Ivan Petrović",
           role: "Advokat",
           intro:
-            "Ivan Petrović ima 20 godina iskustva u advokaturi, sa posebnim fokusom na pravo nepokretnosti, izgradnju, investicione projekte i rešavanje sporova.",
+            "Ivan Petrović ima 20 godina iskustva u advokaturi, sa posebnim fokusom na pravo nepokretnosti, izgradnju, privredno i korporativno pravo i rešavanje sporova.",
         },
         {
           id: "mirjana",
           name: "Mirjana Petrović",
           role: "Advokat",
           intro:
-            "Mirjana Petrović ima 20 godina iskustva u advokaturi, sa posebnim fokusom na porodično pravo i rešavanje složenih imovinskopravnih odnosa.",
+            "Mirjana Petrović ima 20 godina iskustva u advokaturi, sa posebnim fokusom na porodično pravo, imovinskopravne odnose i pravo intelektualne svojine.",
         },
       ],
     },
@@ -179,6 +184,7 @@ export const content: Record<Locale, Content> = {
       enquiryCta: "Pošalji upit",
       learnMore: "Saznajte više",
       back: "Oblasti rada",
+      backToAreas: "Nazad na oblasti rada",
       items: [
         {
           slug: "real-estate",
@@ -252,6 +258,29 @@ export const content: Record<Locale, Content> = {
             "Zastupanje u ostavinskim i drugim postupcima koji se odnose na imovinu.",
           ],
         },
+        {
+          slug: "commercial-corporate",
+          title: "Privredno i korporativno pravo",
+          text: "Pružamo pravnu podršku privrednim društvima, njihovim osnivačima, članovima i upravljačkim strukturama u svakodnevnom poslovanju, korporativnom upravljanju i realizaciji poslovnih transakcija.",
+          intro: [
+            "Pružamo pravnu podršku privrednim društvima, njihovim osnivačima, članovima i upravljačkim strukturama u svakodnevnom poslovanju, korporativnom upravljanju i realizaciji poslovnih transakcija.",
+            "Naše usluge obuhvataju osnivanje i statusne promene privrednih društava, izradu i analizu osnivačkih akata i drugih korporativnih dokumenata, uređenje odnosa između članova društva, kao i savetovanje u vezi sa pravima i obavezama direktora i drugih odgovornih lica.",
+            "Pružamo pravnu podršku u pregovorima i zaključivanju komercijalnih ugovora, uključujući ugovore o pružanju usluga, distribuciji, zastupanju, zakupu i drugim poslovnim odnosima. Savetujemo klijente u vezi sa strukturiranjem i realizacijom poslovnih transakcija, kao i u pitanjima odgovornosti, izvršenja ugovornih obaveza i zaštite poslovnih interesa.",
+            "Naš pristup usmeren je na stvaranje pravno sigurnog okvira za poslovanje, uz razumevanje komercijalnih ciljeva i praktičnih potreba klijenata.",
+          ],
+        },
+        {
+          slug: "intellectual-property",
+          title: "Pravo intelektualne svojine",
+          text: "Pružamo pravnu podršku u zaštiti, ostvarivanju i komercijalnom iskorišćavanju prava intelektualne svojine.",
+          intro: [
+            "Pružamo pravnu podršku u zaštiti, ostvarivanju i komercijalnom iskorišćavanju prava intelektualne svojine.",
+            "Savetujemo klijente u vezi sa zaštitom žigova, autorskih i srodnih prava, industrijskog dizajna i drugih prava intelektualne svojine, kao i u vezi sa pravnim aspektima korišćenja i prenosa ovih prava.",
+            "Naše usluge obuhvataju pripremu i analizu ugovora o licenci, prenosu prava i drugim oblicima komercijalnog korišćenja intelektualne svojine, kao i savetovanje u vezi sa zaštitom poverljivih poslovnih informacija i poslovnih tajni.",
+            "Pružamo pravnu pomoć u slučajevima povrede prava intelektualne svojine, uključujući pripremu zahteva za zaštitu prava, pregovore i zastupanje u sudskim i drugim postupcima.",
+            "Naš cilj je da klijentima omogućimo ne samo pravnu zaštitu njihove intelektualne svojine, već i njeno efikasno korišćenje kao poslovnog resursa.",
+          ],
+        },
       ],
     },
     aboutPage: {
@@ -282,13 +311,12 @@ export const content: Record<Locale, Content> = {
           name: "Ivan Petrović",
           role: "Advokat",
           paragraphs: [
-            "Ivan Petrović ima 20 godina iskustva u advokaturi, sa posebnim fokusom na pravo nepokretnosti, izgradnju, investicione projekte i rešavanje sporova.",
+            "Ivan Petrović ima 20 godina iskustva u advokaturi, sa posebnim fokusom na pravo nepokretnosti, izgradnju, privredno i korporativno pravo i rešavanje sporova.",
             "Tokom profesionalne karijere savetovao je domaće i međunarodne kompanije i investitore u složenim transakcijama, razvoju nepokretnosti, građevinskim ugovorima i postupcima pred sudovima i nadležnim organima.",
-            "Njegovo iskustvo posebno obuhvata pregovaranje i realizaciju transakcija u oblasti nepokretnosti, pravnu analizu investicija, ugovore o građenju, uključujući FIDIC i EPC modele, kao i zastupanje u sporovima koji proizlaze iz složenih investicionih i građevinskih projekata.",
-            "Ivan je poznat po poslovno orijentisanom pristupu, sposobnosti da sagleda kompleksna pravna pitanja iz različitih uglova i pronalaženju praktičnih rešenja za probleme klijenata.",
             "Posebnu oblast njegovog profesionalnog angažovanja predstavljaju složeni građevinski i infrastrukturni projekti, uključujući projekte u energetskom sektoru. Ima značajno iskustvo u pripremi, analizi i pregovaranju FIDIC i EPC ugovora, kao i u rešavanju pitanja koja nastaju tokom njihove realizacije.",
-            "Savetuje investitore, izvođače i druge učesnike projekata u vezi sa ugovornim zahtevima, produženjem rokova, promenama obima radova, dodatnim troškovima, odgovornošću za nedostatke i drugim pitanjima koja mogu uticati na realizaciju projekta.",
+            "U oblasti privrednog i korporativnog prava pruža pravnu podršku privrednim društvima u vezi sa korporativnim upravljanjem, komercijalnim ugovorima, strukturiranjem poslovnih odnosa i realizacijom poslovnih transakcija.",
             "Njegovo iskustvo obuhvata i zastupanje u složenim privrednim i građevinskim sporovima, uključujući arbitražne postupke.",
+            "Posebno se izdvaja poslovno orijentisanim pristupom, sposobnošću da sagleda kompleksna pravna pitanja iz različitih uglova i pronalaženjem praktičnih rešenja za probleme klijenata.",
           ],
         },
         {
@@ -296,10 +324,11 @@ export const content: Record<Locale, Content> = {
           name: "Mirjana Petrović",
           role: "Advokat",
           paragraphs: [
-            "Mirjana Petrović ima 20 godina iskustva u advokaturi, sa posebnim fokusom na porodično pravo i rešavanje složenih imovinskopravnih odnosa.",
+            "Mirjana Petrović ima 20 godina iskustva u advokaturi, sa posebnim fokusom na porodično pravo, imovinskopravne odnose i pravo intelektualne svojine.",
             "U svojoj praksi bavi se pravnim pitanjima koja nastaju u okviru porodičnih odnosa, uključujući bračnoimovinske odnose, deobu zajedničke imovine supružnika, izdržavanje, vršenje roditeljskog prava i druge pravne posledice prestanka bračne ili vanbračne zajednice.",
             "Posebno iskustvo obuhvata rešavanje imovinskih pitanja koja zahtevaju povezivanje porodičnog, stvarnog i naslednog prava, uključujući pitanja zajedničke i posebne imovine, prenosa prava na nepokretnostima i zaštite imovinskih interesa članova porodice.",
-            "U radu sa klijentima neguje individualan i pažljiv pristup, uz nastojanje da se pravna pitanja sagledaju u njihovom širem životnom i imovinskom kontekstu. Posebnu pažnju posvećuje pronalaženju rešenja koja, kada god je to moguće, omogućavaju izbegavanje dugotrajnih i nepotrebnih sporova.",
+            "U oblasti prava intelektualne svojine pruža pravnu podršku u vezi sa zaštitom i ostvarivanjem prava intelektualne svojine, uključujući žigove, autorska i srodna prava, kao i ugovore o licenci, prenosu i korišćenju prava intelektualne svojine.",
+            "U radu sa klijentima neguje individualan i pažljiv pristup, uz nastojanje da se pravna pitanja sagledaju u njihovom širem životnom, imovinskom i poslovnom kontekstu. Posebnu pažnju posvećuje pronalaženju pravno utemeljenih i praktičnih rešenja.",
           ],
         },
       ],
@@ -319,11 +348,11 @@ export const content: Record<Locale, Content> = {
       items: [
         {
           q: "Šta da navedem u prvom upitu?",
-          a: "Ukratko opišite zbog čega se javljate i ostavite broj telefona na koji možemo da vas kontaktiramo.",
+          a: "Ukratko opišite zbog čega se javljate i ostavite broj telefona na koji možemo da Vas kontaktiramo.",
         },
         {
           q: "Da li je moguć razgovor na engleskom?",
-          a: "Ako želite razgovor na engleskom, navedite to u upitu kako bi kancelarija mogla da vam potvrdi mogućnost.",
+          a: "Razgovor na engleskom je moguć.",
         },
         {
           q: "Kako da zakažem sastanak?",
@@ -345,6 +374,7 @@ export const content: Record<Locale, Content> = {
       close: "Zatvori",
       closeLabel: "Zatvori prozor",
       success: "Upit uspešno poslat",
+      successNote: "Naša kancelarija će vas ubrzo kontaktirati oko daljih koraka.",
       errors: {
         generic: "Upit nije poslat. Pokušajte ponovo ili pozovite kancelariju.",
         config:
@@ -355,8 +385,10 @@ export const content: Record<Locale, Content> = {
     },
     blog: {
       title: "Blog",
-      empty: "Tekstovi će uskoro biti objavljeni.",
-      back: "Nazad na početnu",
+      readMore: "Pročitaj članak",
+      backToBlog: "Nazad na blog",
+      authorLabel: "Autor",
+      otherTitle: "Ostali članci",
     },
     footer: { text: "© ADVOKATSKA KANCELARIJA PETROVIĆ" },
   },
@@ -369,7 +401,7 @@ export const content: Record<Locale, Content> = {
       blogDescription: "Blog of the Petrović Law Office.",
     },
     brand: {
-      name: "PETROVIĆ LAW OFFICE",
+      name: "LAW OFFICE PETROVIĆ",
       monogram: "P",
       logoAlt: "Petrović Law Office logo",
     },
@@ -387,9 +419,12 @@ export const content: Record<Locale, Content> = {
       langNames: { sr: "Srpski", en: "English" },
     },
     hero: {
-      eyebrow: "Law office",
+      eyebrow: "Law Office",
       title: "Solutions that\ncreate value",
-      text: "We provide legal services to domestic and international companies, investors and individuals in complex real estate, construction and other legal matters.",
+      paragraphs: [
+        "We provide legal services to domestic and international companies, investors and individuals in complex real estate, construction and other legal matters.",
+        "We approach every matter from a broader perspective, taking into account its legal, commercial and practical dimensions. Our objective is not merely to identify legal issues, but to develop effective solutions that address our clients' actual needs.",
+      ],
       cta: "Contact us",
     },
     about: {
@@ -409,14 +444,14 @@ export const content: Record<Locale, Content> = {
           name: "Ivan Petrović",
           role: "Attorney at Law",
           intro:
-            "Ivan Petrović has 20 years of experience in legal practice, with a particular focus on real estate, construction, investment projects and dispute resolution.",
+            "Ivan Petrović has 20 years of experience in legal practice, with a particular focus on real estate, construction, commercial and corporate law, and dispute resolution.",
         },
         {
           id: "mirjana",
           name: "Mirjana Petrović",
           role: "Attorney at Law",
           intro:
-            "Mirjana Petrović has 20 years of experience in legal practice, with a particular focus on family law and complex property matters.",
+            "Mirjana Petrović has 20 years of experience in legal practice, with a particular focus on family law, property matters and intellectual property law.",
         },
       ],
     },
@@ -427,6 +462,7 @@ export const content: Record<Locale, Content> = {
       enquiryCta: "Send an enquiry",
       learnMore: "Learn more",
       back: "Practice Areas",
+      backToAreas: "Back to practice areas",
       items: [
         {
           slug: "real-estate",
@@ -500,6 +536,29 @@ export const content: Record<Locale, Content> = {
             "Representation in probate and other proceedings concerning property.",
           ],
         },
+        {
+          slug: "commercial-corporate",
+          title: "Commercial & Corporate Law",
+          text: "We provide legal support to companies, their founders, shareholders and management in relation to day-to-day business operations, corporate governance and commercial transactions.",
+          intro: [
+            "We provide legal support to companies, their founders, shareholders and management in relation to day-to-day business operations, corporate governance and commercial transactions.",
+            "Our services include company incorporation and corporate changes, drafting and reviewing constitutional documents and other corporate documentation, structuring shareholder relationships, and advising on the rights and obligations of directors and other officers.",
+            "We assist clients in negotiating and concluding commercial agreements, including service, distribution, agency, lease and other business contracts. We also advise on the structuring and implementation of commercial transactions, contractual liability, performance of contractual obligations and the protection of business interests.",
+            "Our approach focuses on establishing a sound legal framework for business operations while taking into account our clients' commercial objectives and practical needs.",
+          ],
+        },
+        {
+          slug: "intellectual-property",
+          title: "Intellectual Property Law",
+          text: "We provide legal support in the protection, enforcement and commercial exploitation of intellectual property rights.",
+          intro: [
+            "We provide legal support in the protection, enforcement and commercial exploitation of intellectual property rights.",
+            "We advise clients on the protection of trademarks, copyright and related rights, industrial designs and other intellectual property rights, as well as on the legal aspects of their use and transfer.",
+            "Our services include drafting and reviewing licensing, assignment and other agreements concerning the commercial exploitation of intellectual property, as well as advising on the protection of confidential business information and trade secrets.",
+            "We assist clients in addressing intellectual property infringements, including the preparation of enforcement claims, negotiations and representation in court and other proceedings.",
+            "Our objective is not only to protect our clients' intellectual property, but also to help them use it effectively as a business asset.",
+          ],
+        },
       ],
     },
     aboutPage: {
@@ -530,13 +589,12 @@ export const content: Record<Locale, Content> = {
           name: "Ivan Petrović",
           role: "Attorney at Law",
           paragraphs: [
-            "Ivan Petrović has 20 years of experience in legal practice, with a particular focus on real estate, construction, investment projects and dispute resolution.",
+            "Ivan Petrović has 20 years of experience in legal practice, with a particular focus on real estate, construction, commercial and corporate law, and dispute resolution.",
             "Throughout his career, he has advised domestic and international companies and investors on complex transactions, real estate developments, construction contracts and proceedings before courts and public authorities.",
-            "His experience includes negotiating and implementing real estate transactions, investment due diligence, construction contracts, including FIDIC and EPC arrangements, as well as representing clients in disputes arising from complex investment and construction projects.",
-            "Ivan is recognized for his commercially oriented approach, his ability to assess complex legal issues from different perspectives and his focus on finding practical solutions to clients' challenges.",
             "A significant part of his practice involves complex construction and infrastructure projects, including projects in the energy sector. He has extensive experience in drafting, reviewing and negotiating FIDIC and EPC contracts, as well as addressing issues arising during their performance.",
-            "He advises employers, contractors and other project participants on contractual claims, extensions of time, variations, additional costs, defects liability and other matters affecting project implementation.",
+            "In the field of commercial and corporate law, he advises companies on corporate governance, commercial agreements, structuring business relationships and implementing commercial transactions.",
             "His experience also includes representation in complex commercial and construction disputes, including arbitration proceedings.",
+            "He is recognized for his commercially oriented approach, his ability to assess complex legal issues from different perspectives and his focus on finding practical solutions to clients' challenges.",
           ],
         },
         {
@@ -544,10 +602,11 @@ export const content: Record<Locale, Content> = {
           name: "Mirjana Petrović",
           role: "Attorney at Law",
           paragraphs: [
-            "Mirjana Petrović has 20 years of experience in legal practice, with a particular focus on family law and complex property matters.",
+            "Mirjana Petrović has 20 years of experience in legal practice, with a particular focus on family law, property matters and intellectual property law.",
             "Her practice covers legal issues arising from family relationships, including matrimonial property, division of marital assets, maintenance, parental responsibility and other legal consequences of the dissolution of marriage or non-marital partnerships.",
             "She has particular experience in property matters requiring the combined application of family, property and inheritance law, including issues concerning joint and separate property, transfers of real estate and the protection of family members' property interests.",
-            "Her approach is characterised by individual attention to clients and a careful assessment of the broader personal and property-related circumstances of each matter. She places particular emphasis on identifying solutions that, wherever possible, avoid lengthy and unnecessary disputes.",
+            "In the field of intellectual property law, she provides legal assistance in relation to the protection and enforcement of intellectual property rights, including trademarks, copyright and related rights, as well as licensing, assignment and other agreements concerning the use of intellectual property.",
+            "Her approach is characterized by individual attention to clients and a careful assessment of the broader personal, property-related and commercial circumstances of each matter. She places particular emphasis on identifying legally sound and practical solutions.",
           ],
         },
       ],
@@ -571,7 +630,7 @@ export const content: Record<Locale, Content> = {
         },
         {
           q: "Is it possible to talk in English?",
-          a: "If you would like to talk in English, say so in your enquiry so that the office can confirm availability.",
+          a: "Yes, it's possible to talk in English with our lawyers.",
         },
         {
           q: "How do I arrange a meeting?",
@@ -593,6 +652,7 @@ export const content: Record<Locale, Content> = {
       close: "Close",
       closeLabel: "Close dialog",
       success: "Your enquiry was sent successfully",
+      successNote: "Our office will contact you shortly to discuss the next steps.",
       errors: {
         generic:
           "Your enquiry was not sent. Please try again or call the office.",
@@ -603,8 +663,10 @@ export const content: Record<Locale, Content> = {
     },
     blog: {
       title: "Blog",
-      empty: "Articles will be published soon.",
-      back: "Back to home",
+      readMore: "Read article",
+      backToBlog: "Back to blog",
+      authorLabel: "Author",
+      otherTitle: "Other articles",
     },
     footer: { text: "© PETROVIĆ LAW OFFICE" },
   },

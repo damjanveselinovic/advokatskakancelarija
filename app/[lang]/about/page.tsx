@@ -26,7 +26,7 @@ export default async function AboutPage({ params }: PageProps<"/[lang]/about">) 
   return (
     <>
       <ScrollReveal />
-      <section className="section section-light page-top">
+      <section className="section section-grey page-top about-top">
         <div className="container">
           <h1 className="hero-title page-title">{a.title}</h1>
           <div className="prose prose-lead">
@@ -39,9 +39,9 @@ export default async function AboutPage({ params }: PageProps<"/[lang]/about">) 
         </div>
       </section>
 
-      <section id="firm" className="section section-paper">
+      <section id="firm" className="section section-grey">
         <div className="container split">
-          <h2 className="h2" data-reveal="words">
+          <h2 className="h2 about-title" data-reveal="words">
             <SplitText text={a.firmTitle} />
           </h2>
           <div className="prose">
@@ -54,9 +54,9 @@ export default async function AboutPage({ params }: PageProps<"/[lang]/about">) 
         </div>
       </section>
 
-      <section id="team" className="section section-light">
+      <section id="team" className="section section-grey">
         <div className="container">
-          <h2 className="h2" data-reveal="words">
+          <h2 className="h2 team-title" data-reveal="words">
             <SplitText text={a.teamTitle} />
           </h2>
           {a.team.map((m) => (

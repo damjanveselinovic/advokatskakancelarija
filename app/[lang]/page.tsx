@@ -1,9 +1,8 @@
-import { getImageProps } from "next/image";
+import Image, { getImageProps } from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import EnquiryProvider, { EnquiryButton } from "@/components/EnquiryDialog";
 import Faq from "@/components/Faq";
-import HeroAreas from "@/components/HeroAreas";
 import ScrollReveal from "@/components/ScrollReveal";
 import SplitText from "@/components/SplitText";
 import {
@@ -42,23 +41,46 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
             <img {...imgProps} alt="" className="hero-img" />
           </picture>
         </div>
+        <div className="hero-glass-wide" aria-hidden="true" />
         <div className="container hero-content">
-          <div className="hero-copy">
-            <span className="hero-glass" aria-hidden="true" />
-            <p className="eyebrow">{c.hero.eyebrow}</p>
-            <h1 className="hero-title hero-title--home">{c.hero.title}</h1>
-            <p className="hero-text">{c.hero.text}</p>
-            <a className="btn btn-onphoto" href="#contact">
-              {c.hero.cta}
-            </a>
+          <div className="hero-grid">
+            <div className="hero-copy">
+              <p className="eyebrow hero-in hero-in-title">{c.hero.eyebrow}</p>
+              <h1 className="hero-title hero-title--home hero-in hero-in-title">{c.hero.title}</h1>
+              <div className="hero-paragraphs hero-in hero-in-text">
+                {c.hero.paragraphs.map((t) => (
+                  <p key={t} className="hero-text">
+                    {t}
+                  </p>
+                ))}
+              </div>
+            </div>
+            <div className="hero-side hero-in hero-in-side">
+              <div className="hero-coin" aria-hidden="true">
+                <Image
+                  src="/logo-emblem.png"
+                  alt=""
+                  width={640}
+                  height={640}
+                  quality={90}
+                  sizes="(max-width: 899px) 220px, 480px"
+                  priority
+                />
+              </div>
+              <div className="hero-actions">
+                <EnquiryButton className="btn btn-onphoto" label={c.contact.enquiryCta} />
+                <a className="btn btn-onphoto" href="#contact">
+                  {c.hero.cta}
+                </a>
+              </div>
+            </div>
           </div>
-          <HeroAreas lang={lang} />
         </div>
       </section>
 
-      <section id="about" className="section section-light">
+      <section id="about" className="section section-grey">
         <div className="container split">
-          <h2 className="h2" data-reveal="words">
+          <h2 className="h2 about-title" data-reveal="words">
             <SplitText text={c.about.title} />
           </h2>
           <div className="about-text">
@@ -79,7 +101,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
 
       <section id="people" className="section section-paper">
         <div className="container">
-          <h2 className="h2" data-reveal="words">
+          <h2 className="h2 team-title" data-reveal="words">
             <SplitText text={c.people.title} />
           </h2>
           <div className="people-grid">

@@ -1,6 +1,5 @@
 import type { ReactNode } from "react";
 
-// Sitna oznaka u tekstu clanaka (content/blog.ts): *kurziv*, **podebljano**, [tekst](https://link).
 const TOKEN = /\*\*(.+?)\*\*|\*(.+?)\*|\[([^\]]+)\]\(([^)\s]+)\)/g;
 
 export default function RichText({ text }: { text: string }): ReactNode {

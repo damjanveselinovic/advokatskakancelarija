@@ -17,7 +17,6 @@ const switzer = localFont({
   ],
   display: "swap",
 });
-// Source Serif 4 (promenljiv, osa opsz): glavni naslov i naslovi sekcija, tezina 300.
 const serif = Source_Serif_4({
   variable: "--font-serif",
   subsets: ["latin", "latin-ext"],
@@ -25,7 +24,6 @@ const serif = Source_Serif_4({
   axes: ["opsz"],
   display: "swap",
 });
-// Inter ostaje za zaglavlje (meni, SR / EN, ime).
 const sans = Inter({
   variable: "--font-sans",
   subsets: ["latin", "latin-ext"],

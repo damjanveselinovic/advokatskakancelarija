@@ -6,7 +6,6 @@ import RichText from "@/components/RichText";
 import { articles, excerpt, formatDate, getArticle, getArticles, type Block } from "@/content/blog";
 import { content, isLocale } from "@/content/site";
 
-// Jedna sema ruta za oba jezika: /sr|en/blog/<slug>, isti slug => preklopnik jezika otvara isti clanak.
 export function generateStaticParams({ params }: { params: { lang: string } }) {
   if (!isLocale(params.lang)) return [];
   return articles.map((a) => ({ slug: a.slug }));
@@ -25,7 +24,6 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/blog/[slug
 
 type Params = PageProps<"/[lang]/blog/[slug]">["params"];
 
-// params se cita u detetu unutar <Suspense> (kao na stranicama oblasti rada).
 export default function ArticlePage({ params }: { params: Params }) {
   return (
     <Suspense fallback={<div className="area-back" aria-busy="true" />}>
@@ -100,7 +98,6 @@ async function ArticleContent({ params }: { params: Params }) {
             <h2 id="other-articles" className="aside-title">
               {c.blog.otherTitle}
             </h2>
-            {/* data-lenis-prevent: tockic nad listom skroluje samo listu (Lenis ga ne preuzima) */}
             <ul data-lenis-prevent>
               {others.map((o) => (
                 <li key={o.slug}>

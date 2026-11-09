@@ -1,10 +1,10 @@
 :root {
   --graphite: #272925;
-  --paper: #eae6dd; /* svetla kamena */
-  --white: #f6f3ed; /* topla bela */
-  --grey: #e9e9e6; /* svetlosiva: O kancelariji, stranice oblasti rada (sadrzaj + traka „Nazad“) */
+  --paper: #eae6dd;
+  --white: #f6f3ed;
+  --grey: #e9e9e6;
   --ink: #272925;
-  --olive: #52604b; /* akcenat: linkovi i dugmad */
+  --olive: #52604b;
   --muted: #5c5e56;
   --line: rgba(39, 41, 37, 0.2);
   --line-light: rgba(246, 243, 237, 0.24);
@@ -29,7 +29,6 @@ html {
     transition: none !important;
   }
 }
-/* Lenis */
 html.lenis,
 html.lenis body {
   height: auto;
@@ -61,7 +60,6 @@ a {
   padding-right: 24px;
 }
 
-/* Header: providna traka sa jakim blur-om (isti izgled pri skrolu); otvoren meni = grafitna celina */
 .site-header {
   font-family: var(--ui);
   position: fixed;
@@ -110,7 +108,6 @@ html.menu-open {
   height: 36px;
   display: block;
   object-fit: cover;
-  /* novcic na beloj pozadini: iseci krug da se bela pozadina ne vidi u traci */
   clip-path: circle(46.5% at 49.5% 50.2%);
 }
 .monogram {
@@ -199,7 +196,6 @@ html.menu-open {
 .nav-mobile {
   display: none;
 }
-/* Hamburger umesto linkova kad ne staju u jedan red (najduza varijanta: SR, ~1130px + razmaci) */
 @media (max-width: 1179px) {
   .nav-desktop {
     display: none;
@@ -275,7 +271,6 @@ html.menu-open {
     text-underline-offset: 6px;
   }
 }
-/* sirok prikaz (tablet): dve kolone sa tankom vertikalnom linijom */
 @media (min-width: 640px) and (max-width: 1179px) {
   .menu-inner {
     grid-template-columns: 1fr auto;
@@ -343,14 +338,12 @@ button:focus-visible {
   }
 }
 
-/* Headings and text */
 .row-title,
 .phone-link {
   font-weight: 400;
   letter-spacing: -0.03em;
   line-height: 0.98;
 }
-/* Source Serif 4 Light (opsz automatski po velicini) */
 .hero-title,
 .h2 {
   font-family: var(--font-serif), Georgia, "Times New Roman", serif;
@@ -361,7 +354,7 @@ button:focus-visible {
 }
 .hero-title {
   text-wrap: balance;
-  font-weight: 500; /* Source Serif 4 Regular za glavni naslov */
+  font-weight: 500;
   font-size: clamp(40px, 4.3vw, 78px);
   margin: 0 0 28px;
   white-space: pre-line;
@@ -376,7 +369,7 @@ button:focus-visible {
     45px,
     4.6vw,
     88px
-  ); /* ~88px na sirokom desktopu, postepeno manji */
+  );
   overflow-wrap: break-word;
 }
 .hero-title .line {
@@ -404,7 +397,6 @@ button:focus-visible {
   line-height: 1.75;
 }
 
-/* Hero: fotografija preko cele sekcije; raspored je u bloku "HERO" na kraju fajla */
 .hero {
   position: relative;
   overflow: hidden;
@@ -417,14 +409,13 @@ button:focus-visible {
 }
 .hero-img {
   object-fit: cover;
-  object-position: 50% 78%; /* stepenice i dijagonalne senke u desnoj polovini */
+  object-position: 50% 78%;
   width: 100%;
   height: 100%;
 }
 .hero .eyebrow {
   opacity: 1;
 }
-/* Dugmad: preliv boje sleva nadesno (220 ms) preko zasebnog sloja, scaleX */
 .btn {
   --fill: var(--olive);
   --on-fill: var(--white);
@@ -573,7 +564,7 @@ button:focus-visible {
   margin: 0 0 12px;
   font-size: 15px;
   color: rgba(246, 243, 237, 0.75);
-  text-align: left; /* kratki opisi u karticama: levo, prirodni razmaci */
+  text-align: left;
 }
 .row-cta {
   margin-top: 8px;
@@ -626,7 +617,6 @@ button:focus-visible {
 .page-title {
   font-size: clamp(42px, 6.5vw, 90px);
 }
-/* pojedinacne stranice oblasti rada: naslov ~28% manji */
 .page-title.area-title {
   font-size: clamp(30px, 4.7vw, 65px);
 }
@@ -649,7 +639,7 @@ button:focus-visible {
     padding: 64px 0;
   }
   .hero-img {
-    object-position: 58% 40%; /* background6: zakrivljeni stepenici i duboke senke */
+    object-position: 58% 40%;
   }
   .rows {
     grid-template-columns: 1fr;
@@ -663,7 +653,6 @@ button:focus-visible {
   }
 }
 
-/* Kontakt */
 .contact-actions {
   display: flex;
   flex-direction: column;
@@ -708,7 +697,6 @@ button:focus-visible {
   margin-top: 12px;
 }
 
-/* Modal */
 html:has(dialog[open]) {
   overflow: hidden;
 }
@@ -856,7 +844,6 @@ html:has(dialog[open]) {
   opacity: 0.7;
 }
 
-/* Linkovi sa strelicom */
 .more-link {
   display: inline-flex;
   align-items: center;
@@ -880,7 +867,6 @@ html:has(dialog[open]) {
   margin-top: 8px;
 }
 
-/* Tim (pocetna) */
 .people-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -911,9 +897,9 @@ html:has(dialog[open]) {
   font-size: 16px;
   line-height: 1.75;
   max-width: 34em;
+  text-align: justify;
 }
 
-/* Tekstualne stranice (O kancelariji i timu, oblasti rada) */
 .prose {
   max-width: 44rem;
 }
@@ -1022,7 +1008,7 @@ html:has(dialog[open]) {
   display: flex;
   flex-wrap: wrap;
   gap: 8px 24px;
-  margin-top: auto; /* dugmad na dnu kartice; kartice u redu su iste visine (grid stretch) */
+  margin-top: auto;
 }
 .row-actions .row-cta {
   margin-top: 0;
@@ -1037,7 +1023,6 @@ html:has(dialog[open]) {
   text-underline-offset: 6px;
 }
 
-/* FAQ */
 .faq {
   margin-top: 56px;
   width: 100%;
@@ -1103,7 +1088,6 @@ html:has(dialog[open]) {
   line-height: 1.7;
 }
 
-/* Pojavljivanje pri skrolovanju (aktivno samo kad JS postavi .reveal-on) */
 .reveal-on [data-reveal="fade"]:not(.is-in) {
   opacity: 0;
   transform: translateY(16px);
@@ -1137,7 +1121,6 @@ html:has(dialog[open]) {
   }
 }
 
-/* Mapa */
 .map-section {
   padding: 0 0 72px;
   background: var(--paper);
@@ -1170,11 +1153,9 @@ html:has(dialog[open]) {
   }
 }
 
-/* Baneri oblasti rada: pun sirina, visina prati sirinu ekrana */
 .area-banner {
   position: relative;
   width: 100%;
-  /* visina raste sa sirinom (vidi se priblizno isti deo fotografije): telefon 260px, desktop do 420px */
   height: clamp(260px, 23vw, 420px);
   overflow: hidden;
   background: var(--paper);
@@ -1194,7 +1175,6 @@ html:has(dialog[open]) {
   margin: 32px 0 0;
 }
 
-/* Povratak sa detalja oblasti: tanak red odmah ispod fiksnog zaglavlja, levo */
 .area-back {
   margin-top: var(--header-h);
   background: var(--grey);
@@ -1220,23 +1200,20 @@ html:has(dialog[open]) {
   text-underline-offset: 5px;
 }
 
-/* "Nas tim": samo na telefonu naslov sekcije veci i podebljan (razlikuje se od imena) */
 @media (max-width: 899px) {
   .team-title {
     font-size: 46px;
     font-weight: 500;
     letter-spacing: -0.02em;
   }
-  /* "O kancelariji" / "About Us": ista debljina kao "Nas tim" (velicina nepromenjena) */
   .about-title {
     font-weight: 500;
   }
 }
 
-/* ===== HERO: levo oznaka + naslov + opis, desno ceo novcic i dugmad ispod; telefon: jedna kolona, pa dugmad levo / novcic desno ===== */
 .hero {
-  --coin: clamp(240px, min(25vw, calc(100svh - 340px)), 480px); /* precnik novcica (desktop) */
-  --eyebrow-h: 41px; /* oznaka + razmak: vrh novcica ide u visinu vrha naslova */
+  --coin: clamp(240px, min(25vw, calc(100svh - 340px)), 480px);
+  --eyebrow-h: 41px;
 }
 .hero-content {
   position: relative;
@@ -1259,7 +1236,7 @@ html:has(dialog[open]) {
   margin: 0 0 24px;
   font-size: clamp(30px, 10vw, 64px);
   line-height: 1.02;
-  white-space: normal; /* telefon: prirodan prelom; "\n" iz sadrzaja je samo razmak */
+  white-space: normal;
   text-wrap: balance;
   text-shadow: 0 1px 3px rgba(10, 10, 8, 0.45), 0 6px 26px rgba(10, 10, 8, 0.5);
 }
@@ -1269,16 +1246,15 @@ html:has(dialog[open]) {
 .hero-paragraphs .hero-text {
   max-width: none;
   margin: 0 0 14px;
-  font-size: 14px; /* telefon */
+  font-size: 14px;
   line-height: 1.7;
   font-style: italic;
-  text-align: justify; /* obostrano; poslednji red ostaje levo */
+  text-align: justify;
   text-shadow: 0 1px 10px rgba(10, 10, 8, 0.5);
 }
 .hero-paragraphs .hero-text:last-child {
   margin-bottom: 0;
 }
-/* donji red na telefonu: dugmad levo, novcic desno (vertikalno centriran) */
 .hero-side {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);
@@ -1306,16 +1282,14 @@ html:has(dialog[open]) {
 .hero-actions .btn {
   width: 100%;
   text-align: center;
-  line-height: 1.3; /* <a> i <button> iste visine */
+  line-height: 1.3;
   padding: 12px 14px;
   font-size: 12px;
   letter-spacing: 0.08em;
   border-radius: 6px;
-  /* zagasita grafitna podloga: natpisi citljivi preko fotografije */
   background: rgba(34, 36, 31, 0.92);
   backdrop-filter: blur(5px);
 }
-/* bez belih okvira; hover = preliv maslinastosive sleva nadesno; fokus = beli obris */
 .btn.btn-onphoto {
   --fill: #636b5d;
   --on-fill: var(--white);
@@ -1329,7 +1303,6 @@ html:has(dialog[open]) {
   outline: 2px solid var(--white);
   outline-offset: 3px;
 }
-/* blur + zatamnjenje fotografije iza teksta (ispod teksta i novcica) */
 .hero-glass-wide {
   position: absolute;
   inset: 0;
@@ -1349,7 +1322,6 @@ html:has(dialog[open]) {
     letter-spacing: 0.1em;
   }
 }
-/* Desktop: dve kolone */
 @media (min-width: 900px) {
   .hero {
     display: flex;
@@ -1363,13 +1335,13 @@ html:has(dialog[open]) {
   .hero-grid {
     grid-template-columns: minmax(0, 1fr) var(--coin);
     column-gap: clamp(40px, 5vw, 96px);
-    padding-right: clamp(16px, 2vw, 30px); /* novcic + dugmad malo ulevo, prema sredini */
+    padding-right: clamp(16px, 2vw, 30px);
     align-items: start;
   }
   .hero-title.hero-title--home {
     font-size: calc(clamp(40px, 5.2vw, 78px) - 2.5px);
     line-height: 1.06;
-    white-space: pre-line; /* dva reda: "\n" iz sadrzaja */
+    white-space: pre-line;
     text-wrap: nowrap;
     margin-bottom: 28px;
   }
@@ -1388,7 +1360,7 @@ html:has(dialog[open]) {
   }
   .hero-actions {
     gap: 8px;
-    margin: 28px auto 0; /* centrirano ispod novcica, ista sirina */
+    margin: 28px auto 0;
   }
   .hero-actions .btn {
     padding: 11px 22px;
@@ -1399,10 +1371,6 @@ html:has(dialog[open]) {
     mask-image: linear-gradient(to right, #000 0, #000 55%, transparent 80%);
   }
 }
-/* Ulazna animacija (samo desktop, jednom pri ucitavanju, bez cekanja na skrol): trajanje i usporavanje
-   kao kod pojavljivanja reci/teksta na sajtu (650 ms cubic-bezier(.22,.61,.36,1), pojavljivanje 600 ms ease-out).
-   Naslov (sa oznakom) ulazi sleva, pasusi iz istog smera 150 ms kasnije, novcic + dugmad zajedno zdesna.
-   Uz prefers-reduced-motion nema animacije: sadrzaj je odmah na krajnjoj poziciji. */
 @keyframes hero-slide {
   from {
     transform: translateX(var(--hero-from));
@@ -1436,23 +1404,18 @@ html:has(dialog[open]) {
     --hero-delay: 100ms;
   }
 }
-/* ===== /HERO ===== */
 
-/* Obostrano poravnanje pasusa (samo navedeni pasusi; naslovi, navigacija, dugmad i liste ostaju kakvi jesu):
-   uvod (u bloku HERO), O kancelariji (pocetna), stranice O kancelariji i oblasti rada, opisi oblasti rada */
 .about-text .lead,
 .prose p {
   text-align: justify;
 }
 
-/* O kancelariji: na telefonu malo vise prostora izmedju zaglavlja i naslova */
 @media (max-width: 899px) {
   .about-top {
     padding-top: calc(var(--header-h) + 80px + 22px);
   }
 }
 
-/* ===== BLOG: pregled u stilu novina + stranica clanka ===== */
 .blog-heading {
   margin-bottom: 40px;
 }
@@ -1531,7 +1494,7 @@ html:has(dialog[open]) {
 }
 @media (max-width: 899px) {
   .blog-page {
-    padding-top: calc(var(--header-h) + 40px); /* .section na telefonu inace ponistava .page-top */
+    padding-top: calc(var(--header-h) + 40px);
   }
 }
 @media (max-width: 699px) {
@@ -1544,7 +1507,6 @@ html:has(dialog[open]) {
   }
 }
 
-/* stranica clanka: glavna kolona malo ulevo, desno uzak meni "Ostali clanci" */
 .article-top {
   padding-top: 56px;
 }
@@ -1660,7 +1622,6 @@ html:has(dialog[open]) {
     column-gap: clamp(48px, 5vw, 80px);
     align-items: start;
   }
-  /* meni "Ostali clanci": sticky ispod zaglavlja, visina = prostor u prozoru; naslov ostaje, lista se skroluje zasebno */
   .article-aside {
     --aside-top: calc(var(--header-h) + 32px);
     position: sticky;
@@ -1679,10 +1640,9 @@ html:has(dialog[open]) {
     flex: 1 1 auto;
     min-height: 0;
     overflow-y: auto;
-    overscroll-behavior-y: contain; /* na kraju liste skrol se ne prenosi na clanak */
+    overscroll-behavior-y: contain;
     padding-right: 8px;
     scrollbar-width: thin;
     scrollbar-color: var(--line) transparent;
   }
 }
-/* ===== /BLOG ===== */

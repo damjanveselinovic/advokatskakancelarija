@@ -2,8 +2,6 @@
 
 import { useLayoutEffect } from "react";
 
-// Pojavljivanje sadržaja pri skrolovanju: jednom, IntersectionObserver + CSS.
-// Bez JS-a ili uz prefers-reduced-motion sve je odmah vidljivo.
 export default function ScrollReveal() {
   useLayoutEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
@@ -14,7 +12,6 @@ export default function ScrollReveal() {
       el.classList.add("is-in");
     };
 
-    // Već vidljivi ili iznad ekrana (npr. posle promene jezika): odmah, bez animacije.
     const pending = els.filter((el) => {
       const r = el.getBoundingClientRect();
       if (r.top < vh * 0.92) {
@@ -29,7 +26,6 @@ export default function ScrollReveal() {
       (entries) => {
         for (const e of entries) {
           const el = e.target as HTMLElement;
-          // iznad ekrana (brzo skrolovanje / preskočeno): odmah
           if (e.isIntersecting) show(el);
           else if (e.boundingClientRect.top < 0) show(el, true);
           else continue;
@@ -40,7 +36,6 @@ export default function ScrollReveal() {
     );
     pending.forEach((el) => io.observe(el));
 
-    // Klik na link ka sekciji: sadržaj do cilja (i cilj) odmah dostupan.
     const onClick = (ev: MouseEvent) => {
       const a = (ev.target as Element | null)?.closest?.("a");
       if (!a || !a.hash) return;

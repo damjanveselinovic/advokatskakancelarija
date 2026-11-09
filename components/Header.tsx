@@ -31,7 +31,6 @@ export default function Header({ lang, brand, nav }: Props) {
     if (el && el.complete && el.naturalWidth === 0) setLogoFailed(true);
   }, []);
 
-  // Otvoren meni: zaustavi skrol stranice (Lenis + nativni), fokus u meni, Escape zatvara.
   useEffect(() => {
     if (!open) return;
     getLenis()?.stop();
@@ -48,11 +47,10 @@ export default function Header({ lang, brand, nav }: Props) {
       document.removeEventListener("keydown", onKey);
       document.documentElement.classList.remove("menu-open");
       const l = getLenis();
-      if (l?.isStopped) l.start(); // ne prekidaj skrol koji je link vec pokrenuo
+      if (l?.isStopped) l.start();
     };
   }, [open]);
 
-  // Prelaz na siroki raspored (linkovi u traci) zatvara meni da ne ostane zakljucan skrol.
   useEffect(() => {
     const mq = window.matchMedia("(min-width: 1180px)");
     const onChange = () => mq.matches && setOpen(false);
@@ -60,7 +58,6 @@ export default function Header({ lang, brand, nav }: Props) {
     return () => mq.removeEventListener("change", onChange);
   }, []);
 
-  // Fokus ostaje u meniju i kontrolama zaglavlja dok je meni otvoren.
   const trapTab = (e: ReactKeyboardEvent) => {
     if (!open || e.key !== "Tab" || !header.current) return;
     const items = Array.from(

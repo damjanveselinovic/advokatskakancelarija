@@ -12,9 +12,9 @@ export default function SmoothScroll() {
       ? null
       : new Lenis({
           autoRaf: true,
-          lerp: 0.11, // blaga inercija, kratko usporavanje posle točkića
+          lerp: 0.11,
           wheelMultiplier: 1,
-          smoothWheel: true, // samo točkić/trackpad; touch ostaje prirodan
+          smoothWheel: true,
           anchors: false,
         });
     setLenis(lenis);
@@ -25,7 +25,6 @@ export default function SmoothScroll() {
     };
   }, []);
 
-  // Linkovi ka sekcijama na istoj stranici: glatko, sa visinom zaglavlja.
   useEffect(() => {
     const onClick = (e: MouseEvent) => {
       if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
@@ -36,10 +35,10 @@ export default function SmoothScroll() {
       const el = visibleById(decodeURIComponent(u.hash.slice(1)));
       if (!el) return;
       const lenis = getLenis();
-      if (!lenis) return; // reduced motion: nativno ponašanje (scroll-padding-top)
-      e.preventDefault(); // pre Next Link-a (capture faza)
-      if (lenis.isStopped) lenis.start(); // meni zaustavlja skrol; link ga nastavlja
-      lenis.scrollTo(el); // Lenis uračunava scroll-padding-top (visina zaglavlja)
+      if (!lenis) return;
+      e.preventDefault();
+      if (lenis.isStopped) lenis.start();
+      lenis.scrollTo(el);
     };
     document.addEventListener("click", onClick, true);
     return () => document.removeEventListener("click", onClick, true);

@@ -19,7 +19,6 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
   const { lang } = await params;
   if (!isLocale(lang)) notFound();
   const c = content[lang];
-  // Art direction: <picture> bira background6.jpg (portret) cim se raspored prebaci na mobilni (<900px)
   const common = { alt: "", fill: true, quality: 90, sizes: "100vw" } as const;
   const { props: desktopImg } = getImageProps({ ...common, src: "/background5.jpg", priority: true });
   const { props: mobileImg } = getImageProps({ ...common, src: "/background6.jpg", priority: true });

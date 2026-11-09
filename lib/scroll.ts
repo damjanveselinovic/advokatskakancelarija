@@ -25,7 +25,6 @@ export function headerOffset() {
 
 type Saved = { y: number; id?: string; ratio?: number };
 
-/** Pamti mesto: sekciju ispod zaglavlja i relativan položaj unutar nje. */
 export function saveScroll() {
   try {
     const y = window.scrollY;
@@ -54,13 +53,12 @@ export function saveScroll() {
 function jump(y: number) {
   const html = document.documentElement;
   const prev = html.style.scrollBehavior;
-  html.style.scrollBehavior = "auto"; // bez animacije pri vraćanju
+  html.style.scrollBehavior = "auto";
   if (lenis) lenis.scrollTo(y, { immediate: true, force: true });
   else window.scrollTo(0, y);
   html.style.scrollBehavior = prev;
 }
 
-/** Vraća sačuvano mesto (poziva se pri montiranju novog jezika). */
 export function restoreScroll() {
   let saved: Saved | null = null;
   try {
@@ -80,5 +78,5 @@ export function restoreScroll() {
     jump(Math.max(0, y));
   };
   apply();
-  requestAnimationFrame(() => requestAnimationFrame(apply)); // posle eventualnog pomeranja rasporeda
+  requestAnimationFrame(() => requestAnimationFrame(apply));
 }

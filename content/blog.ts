@@ -1,11 +1,3 @@
-// Blog: svi clanci na jednom mestu. Novi clanak = novi objekat u `articles` (slug, date, author, sr, en).
-// Redosled na sajtu se odredjuje automatski po datumu (najnoviji prvi). Tekst clanka je niz blokova:
-//   { type: "h", text }                      podnaslov
-//   { type: "p", text }                      pasus
-//   { type: "ul" | "ol", items: [{ text, sub? }] }   lista (sub = ugnjezdena lista)
-// U tekstu: *kurziv*, **podebljano**, [tekst](https://link).
-// Izvor: "Ivan Petrovic Blog.docx" (oznake ENG:/SRP:, brojevi i datumi iz dokumenta nisu deo teksta).
-
 import type { Locale } from "./site";
 
 export type ListItem = { text: string; sub?: string[] };
@@ -16,7 +8,7 @@ export type Block =
 
 export type Article = {
   slug: string;
-  date: string; // ISO (YYYY-MM-DD), datum objave za oba jezika
+  date: string;
   author: string;
   sr: { title: string; blocks: Block[] };
   en: { title: string; blocks: Block[] };
@@ -789,45 +781,6 @@ export const articles: Article[] = [
     }
   },
   {
-    "slug": "ima-dana-skadarlija",
-    "date": "2022-01-21",
-    "author": "Ivan Petrović",
-    "sr": {
-      "title": "Poznati beogradski restoran „Ima dana“ u Skadarliji prodat kompaniji BG UrbanLUX",
-      "blocks": [
-        {
-          "type": "p",
-          "text": "Kompanija BG Urban Lux završila je kupovinu restorana „Ima dana“ u Skadarliji, najstarijoj i najpoznatijoj boemskoj četvrti u srcu Beograda."
-        },
-        {
-          "type": "p",
-          "text": "Restoran je kupljen od Beogradske industrije piva (BIP) u okviru stečajnog postupka. Na javnom nadmetanju učestvovalo je pet zainteresovanih kupaca, a konačna cena iznosila je 1.300.000 evra."
-        },
-        {
-          "type": "p",
-          "text": "Osnovna delatnost kompanije BG Urban Lux je izgradnja stambenih i poslovnih objekata. Kompanija je osnovana u novembru 2016. godine sa ciljem da se razvije kao investitor i izvođač građevinskih projekata. Angažovanjem stručnjaka sa iskustvom u građevinarstvu nastoji da obezbedi visok kvalitet u svim aspektima izgradnje."
-        }
-      ]
-    },
-    "en": {
-      "title": "Famous Belgrade restaurant ‘Ima dana’ in Skadarlija sold to BG UrbanLUX",
-      "blocks": [
-        {
-          "type": "p",
-          "text": "The company BG Urban Lux has successfully completed the transaction of acquisition of ‘Ima dana’ restaurant in Skadarlija - the oldest and most famous bohemian quarter in the heart of Belgrade."
-        },
-        {
-          "type": "p",
-          "text": "The purchase was done in the bankruptcy proceedings, from the Belgrade beer industry BIP. There were 5 interested buyers in the public bidding procedure, and the final price achieved is 1,300,000 EUR."
-        },
-        {
-          "type": "p",
-          "text": "BG Urban Lux is a company whose main activity is the construction of residential and commercial buildings. It was created in November 2016 with the idea of developing into a serious investment and construction company. Through the engagement of professional and experienced staff in the field of construction industry, they create facilities whose main characteristic is quality in every sense."
-        }
-      ]
-    }
-  },
-  {
     "slug": "construction-laws-amendments",
     "date": "2023-08-14",
     "author": "Ivan Petrović",
@@ -992,7 +945,6 @@ export const articles: Article[] = [
 ];
 
 
-/** Svi clanci, od najnovijeg ka najstarijem (po datumu objave). */
 export function getArticles(): Article[] {
   return [...articles].sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0));
 }
@@ -1006,13 +958,11 @@ const MONTHS: Record<Locale, string[]> = {
   en: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
 };
 
-/** sr: "15. januar 2026." / en: "15 January 2026" */
 export function formatDate(iso: string, lang: Locale): string {
   const [y, m, d] = iso.split("-").map(Number);
   return lang === "sr" ? `${d}. ${MONTHS.sr[m - 1]} ${y}.` : `${d} ${MONTHS.en[m - 1]} ${y}`;
 }
 
-/** Tekst bez oznaka (*, **, [x](url)). */
 export function plain(text: string): string {
   return text
     .replace(/\[([^\]]+)\]\([^)\s]+\)/g, "$1")
@@ -1020,7 +970,6 @@ export function plain(text: string): string {
     .replace(/\*(.+?)\*/g, "$1");
 }
 
-/** Kratak izvod iz prvog pasusa (do ~max znakova, na granici reci). */
 export function excerpt(article: Article, lang: Locale, max = 240): string {
   const first = article[lang].blocks.find((b) => b.type === "p");
   const t = first && first.type === "p" ? plain(first.text) : "";

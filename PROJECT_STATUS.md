@@ -62,7 +62,7 @@
 - Baner na stranicama oblasti rada: visina `clamp(260px, 23vw, 420px)` (ranije fiksnih 224px), vidi se oko 1,5× više fotografije na desktopu.
 - Stranica „O kancelariji i timu“: na telefonu ≈22px veći gornji razmak (`.about-top`); fotografija u uvodu je uklonjena.
 - Iz `Tekst za sajt 2.docx`: dve nove oblasti rada (`commercial-corporate` sa `/oblastiRada/privredno.jpg`, `intellectual-property` sa `/oblastiRada/intelektualno.jpg`; kartica = prvi pasus, stranica = svi pasusi iz dokumenta, bez liste usluga) i nove biografije Ivana i Mirjane Petrović (početna: prvi pasus, stranica „O kancelariji i timu“: ceo tekst), SR i EN. Mreža oblasti na desktopu je 3+2.
-- Blog: 6 članaka iz `Ivan Petrovic Blog.docx` (članak 6, katastar/premer, je uklonjen) u `content/blog.ts` (SR + EN, datum, autor; auto-sort po datumu). Pregled u stilu novina (`/[lang]/blog`), članak `/[lang]/blog/[slug]` sa trakom „Nazad na blog“, obostrano poravnatim tekstom i menijem „Ostali članci“ (desktop: sticky, lista se skroluje zasebno uz `data-lenis-prevent` + `overscroll-behavior-y: contain`; telefon: ispod teksta). Novi članak = novi objekat u `articles`.
+- Blog: 5 članaka iz `Ivan Petrovic Blog.docx` (uklonjeni: katastar/premer i „Ima dana“ / BG UrbanLUX) u `content/blog.ts` (SR + EN, datum, autor; auto-sort po datumu). Pregled u stilu novina (`/[lang]/blog`), članak `/[lang]/blog/[slug]` sa trakom „Nazad na blog“, obostrano poravnatim tekstom i menijem „Ostali članci“ (desktop: sticky, lista se skroluje zasebno uz `data-lenis-prevent` + `overscroll-behavior-y: contain`; telefon: ispod teksta). Novi članak = novi objekat u `articles`.
 
 ## Sledeći koraci
 - Uneti prave sadržaje u `content/site.ts`.

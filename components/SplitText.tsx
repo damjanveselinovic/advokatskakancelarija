@@ -1,4 +1,3 @@
-// Deli naslov na reči (za efekat podizanja iz maske). Razmaci ostaju pravi tekst.
 export default function SplitText({ text }: { text: string }) {
   const words = text.split(" ");
   return (

@@ -1,18 +1,13 @@
-// Sav tekst vidljiv korisniku nalazi se u ovom fajlu (sr i en).
-// All user-facing text lives in this file (sr and en).
-
 export const locales = ["sr", "en"] as const;
 export type Locale = (typeof locales)[number];
 export const defaultLocale: Locale = "en";
 
-// Javni kontakt podaci (prikaz posetiocima). Primalac upita je odvojen: ENQUIRY_TO_EMAIL u okruzenju.
 export const contactEmail = "office@petroviclaw.rs";
 export const phone = {
   href: "tel:+381642656206",
   display: "+381 64 26 56 206",
 };
 export const address = "Kneginje Zorke 16a";
-// Mapa: pretraga po adresi (Google Maps embed bez API kljuca) + link za navigaciju.
 const mapQuery = "Kneginje Zorke 16a, Vračar, Beograd";
 export const mapEmbedUrl = (lang: string) =>
   `https://maps.google.com/maps?q=${encodeURIComponent(
@@ -27,7 +22,7 @@ export type PracticeArea = {
   title: string;
   text: string;
   intro: string[];
-  listTitle?: string; // opciono: oblasti bez liste usluga imaju samo uvodni tekst
+  listTitle?: string;
   services?: string[];
   closing?: string;
 };

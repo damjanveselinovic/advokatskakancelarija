@@ -5,7 +5,6 @@ import ScrollReveal from "@/components/ScrollReveal";
 import SplitText from "@/components/SplitText";
 import { content, isLocale, locales } from "@/content/site";
 
-// Zajednicka (privremena) fotografija za oba profila; zameniti kad stignu prave.
 const PROFILE_PHOTO = "/pfp.jpg";
 
 export function generateStaticParams() {

@@ -4,7 +4,7 @@ import { content, isLocale } from "@/content/site";
 const MIN_FILL_MS = 2500;
 const WINDOW_MS = 10 * 60 * 1000;
 const MAX_PER_WINDOW = 5;
-const hits = new Map<string, number[]>(); // jednostavna zaštita po IP (po instanci servera)
+const hits = new Map<string, number[]>();
 
 const EMAIL_RE = /^[^\s@<>,;]+@[^\s@<>,;]+\.[^\s@<>,;]{2,}$/;
 const clean = (v: unknown, max: number) =>
@@ -31,10 +31,9 @@ export async function POST(req: Request) {
     return fail("invalid", 400);
   }
 
-  // Spam: skriveno polje mora biti prazno, a forma ne sme biti poslata prebrzo.
   const started = Number(body.t);
   if (clean(body.website, 200) || !Number.isFinite(started) || Date.now() - started < MIN_FILL_MS) {
-    return NextResponse.json({ ok: true }); // tiho odbaci, bez slanja
+    return NextResponse.json({ ok: true });
   }
 
   const ip = (req.headers.get("x-forwarded-for") ?? "").split(",")[0].trim() || "unknown";
@@ -61,7 +60,7 @@ export async function POST(req: Request) {
 
   const apiKey = process.env.RESEND_API_KEY;
   const from = process.env.ENQUIRY_FROM_EMAIL;
-  const to = process.env.ENQUIRY_TO_EMAIL; // primalac samo iz okruženja
+  const to = process.env.ENQUIRY_TO_EMAIL;
   if (!apiKey || !from || !to) return fail("config", 503);
 
   const text = [

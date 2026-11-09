@@ -7,8 +7,6 @@ import EnquiryProvider, { EnquiryButton } from "@/components/EnquiryDialog";
 import ScrollReveal from "@/components/ScrollReveal";
 import { content, isLocale } from "@/content/site";
 
-// Roditeljski app/[lang]/layout.tsx vec generise `sr` i `en`; ovde se za svaki jezik
-// uzimaju slugovi oblasti iz sadrzaja, pa se svih 6 stranica unapred renderuje.
 export function generateStaticParams({ params }: { params: { lang: string } }) {
   if (!isLocale(params.lang)) return [];
   return content[params.lang].practice.items.map((it) => ({ slug: it.slug }));
@@ -27,7 +25,6 @@ export async function generateMetadata({
   };
 }
 
-// Baner po oblasti (isti za oba jezika); position drzi glavni motiv u niskom, sirokom kadru.
 const BANNERS: Record<string, { src: string; position: string }> = {
   "real-estate": { src: "/oblastiRada/nepokretnosti.jpg", position: "50% 22%" },
   "dispute-resolution": {
@@ -44,8 +41,6 @@ const BANNERS: Record<string, { src: string; position: string }> = {
 
 type Params = PageProps<"/[lang]/practice/[slug]">["params"];
 
-// params se cita u detetu unutar <Suspense>, da App Shell rute ne zavisi od jednog URL-a
-// (inace Next u razvoju javlja "URL data outside of Suspense").
 export default function PracticePage({ params }: { params: Params }) {
   return (
     <Suspense fallback={<div className="area-back" aria-busy="true" />}>

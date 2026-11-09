@@ -12,7 +12,6 @@ type Props = {
   children: ReactNode;
 };
 
-// Jedan modal za celu stranicu; dugmad ga otvaraju sa (ili bez) unapred izabrane oblasti.
 const Ctx = createContext<(area: number | null, opener: HTMLElement) => void>(() => {});
 
 export function EnquiryButton({
@@ -56,7 +55,6 @@ export default function EnquiryProvider({ lang, text, areas, children }: Props) 
 
   const open = (area: number | null, from: HTMLElement) => {
     opener.current = from;
-    // posle uspeha: prazna forma; inače ostaju uneti podaci. Oblast: iz dugmeta ili prazna.
     setValues((v) => ({ ...(status === "success" ? empty : v), area: area === null ? "" : String(area) }));
     setStatus("idle");
     setError("");
@@ -67,7 +65,7 @@ export default function EnquiryProvider({ lang, text, areas, children }: Props) 
 
   const onClose = () => {
     getLenis()?.start();
-    opener.current?.focus(); // vrati fokus na dugme koje je otvorilo formu
+    opener.current?.focus();
   };
 
   const close = () => dialog.current?.close();
@@ -111,7 +109,7 @@ export default function EnquiryProvider({ lang, text, areas, children }: Props) 
     } catch {
       setError(text.errors.generic);
     }
-    setStatus("error"); // uneti podaci ostaju
+    setStatus("error");
   }
 
   const sending = status === "sending";
@@ -173,7 +171,6 @@ export default function EnquiryProvider({ lang, text, areas, children }: Props) 
                 <textarea required name="message" rows={4} minLength={5} maxLength={4000} value={values.message} onChange={set("message")} disabled={sending} />
               </label>
 
-              {/* zamka za botove: ljudima nevidljivo */}
               <div className="hp" aria-hidden="true">
                 <input tabIndex={-1} autoComplete="off" name="website" value={values.website} onChange={set("website")} />
               </div>

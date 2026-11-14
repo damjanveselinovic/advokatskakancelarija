@@ -16,6 +16,329 @@ export type Article = {
 
 export const articles: Article[] = [
   {
+    "slug": "possessor-registration-land",
+    "date": "2026-11-13",
+    "author": "Ivan Petrović",
+    "sr": {
+      "title": "Upis „držaoca“ na zemljištu – institut koji zakonodavac nije razumeo",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Pravo svojine na nepokretnostima u Republici Srbiji, po pravilu, stiče se upisom u javni registar nepokretnosti – katastar nepokretnosti. Međutim, nadležnost katastra kao jedinstvenog javnog registra nepokretnosti relativno je novijeg datuma. Počev od devedesetih godina, evidencije nepokretnosti postepeno su prevođene iz sistema zemljišnih knjiga, tapija i katastra zemljišta u katastar nepokretnosti, po pojedinačnim katastarskim opštinama. Taj proces okončan je tek nakon 2010. godine."
+        },
+        {
+          "type": "p",
+          "text": "Osnovni cilj prevođenja postojećih evidencija u katastar nepokretnosti bio je sveobuhvatno i precizno uređenje evidencije, kako u pogledu podataka o nepokretnostima, tako i u pogledu prava na njima. Da bi se taj cilj ostvario, postupak osnivanja katastra nepokretnosti u pojedinim situacijama omogućavao je olakšan upis prava svojine, dok je u drugim slučajevima Zakon o državnom premeru i katastru predviđao mogućnost upisa držaoca nepokretnosti."
+        },
+        {
+          "type": "p",
+          "text": "Upis držaoca vršen je, između ostalog, na objektima izgrađenim bez građevinske dozvole, posebnim delovima takvih objekata, ali i na zemljištu – katastarskim parcelama – za koje ranije evidencije nisu sadržale odgovarajuće podatke o pravima."
+        },
+        {
+          "type": "p",
+          "text": "Kada je reč o zemljištu, upis držaoca prvenstveno je služio kao način evidentiranja faktičkog stanja u situacijama u kojima ranija evidencija nepokretnosti nije postojala, a lica koja su zemljište držala u posedu nisu raspolagala ispravama, poput ugovora ili drugih pravnih akata, na osnovu kojih bi mogla da zahtevaju neposredan upis prava svojine."
+        },
+        {
+          "type": "p",
+          "text": "Zakonodavac je, međutim, predvideo i način na koji je privremeni upis držaoca mogao da preraste u upis prava svojine. To je bilo moguće u dve situacije."
+        },
+        {
+          "type": "p",
+          "text": "Prvo, držalac je mogao biti upisan kao vlasnik ukoliko bi katastru dostavio isprave podobne za upis prava svojine, poput ugovora o sticanju, sudske odluke ili rešenja nadležnog organa."
+        },
+        {
+          "type": "p",
+          "text": "Drugo, zakon je predviđao mogućnost upisa prava svojine u korist lica koje je bilo upisano kao držalac, nakon proteka pet godina od dana osnivanja katastra nepokretnosti, pod uslovom da drugo lice u međuvremenu nije podnelo isprave na osnovu kojih bi zahtevalo upis prava svojine na istoj nepokretnosti."
+        },
+        {
+          "type": "p",
+          "text": "Prema tome, upis držaoca na zemljištu zamišljen je kao privremeno rešenje koje je, protekom zakonom određenog roka i pod propisanim uslovima, trebalo da dovede do konačnog upisa prava svojine."
+        },
+        {
+          "type": "p",
+          "text": "Dodatno, zakon je upisanom držaocu priznavao svojstvo savesnog i zakonitog držaoca od dana upisa u katastar. To je imalo poseban značaj za sticanje prava svojine održajem, jer je upisom u katastar stvarana zakonska pretpostavka ispunjenosti uslova za redovni održaj, odnosno sticanje prava svojine protekom roka od deset godina, u skladu sa Zakonom o osnovama svojinskopravnih odnosa."
+        },
+        {
+          "type": "p",
+          "text": "Uopšteno posmatrano, institut upisa držaoca imao je jasno opravdanje. Njegova svrha bila je da omogući evidentiranje faktičkog stanja i, pod određenim uslovima, sticanje i upis prava svojine licima koja nisu raspolagala ispravama o svom pravu, pod pretpostavkom da njihova državina neće biti osporena u zakonom predviđenom roku."
+        },
+        {
+          "type": "p",
+          "text": "Takvo zakonsko rešenje odgovaralo je cilju koji je trebalo ostvariti uspostavljanjem jedinstvenog registra nepokretnosti. U područjima u kojima ranije evidencije nisu postojale ili su bile nepotpune, sasvim je bilo moguće da pojedina lica drže zemljište u posedu generacijama, pa čak i duže od jednog veka, a da pri tome ne raspolažu ispravama kojima bi mogla da dokažu svoje pravo svojine. U takvim okolnostima, zahtev da se pravo svojine dokaže odgovarajućom ispravom često bi bio praktično neostvariv."
+        },
+        {
+          "type": "h",
+          "text": "Promena zakonskog režima i ukidanje mogućnosti sticanja svojine"
+        },
+        {
+          "type": "p",
+          "text": "Godine 2018. donet je Zakon o postupku upisa u katastar nepokretnosti i vodova, sa ciljem povećanja efikasnosti katastarskog sistema, a naročito postupka upisa prava i drugih relevantnih podataka u katastar. I pored sprovedenog postupka javnih rasprava i iznetih primedaba stručne javnosti, predložena zakonska rešenja u značajnoj meri zadržala su pristup sadržan u nacrtu."
+        },
+        {
+          "type": "p",
+          "text": "Jedna od najznačajnijih promena odnosila se upravo na pravni položaj lica upisanih kao držaoci zemljišta."
+        },
+        {
+          "type": "p",
+          "text": "Novim zakonskim režimom stavljena je van snage mogućnost da upisani držalac, pod uslovima propisanim ranijim Zakonom o državnom premeru i katastru, nakon proteka pet godina zahteva upis prava svojine samo na osnovu činjenice da je njegovo pravo državine evidentirano u katastru i da drugo lice nije podnelo isprave za upis svojine."
+        },
+        {
+          "type": "p",
+          "text": "Umesto toga, uveden je vremenski ograničen režim: upisani držalac dužan je da u roku od deset godina dokaže pravo svojine ispravama podobnim za upis, u protivnom se njegov upis briše iz katastra."
+        },
+        {
+          "type": "p",
+          "text": "Ovakav zaokret, po mišljenju autora, posledica je nerazumevanja svrhe i pravne prirode ranijeg instituta upisa držaoca. Još važnije, izmenom zakonskog režima, bez odgovarajućeg prelaznog rešenja za lica koja su već bila upisana kao držaoci, stvorena je ozbiljna pravna nesigurnost u pogledu njihovog položaja i mogućnosti da u budućnosti ostvare pravo svojine."
+        },
+        {
+          "type": "h",
+          "text": "Pravna priroda državine i položaj upisanog držaoca"
+        },
+        {
+          "type": "p",
+          "text": "Državina je institut stvarnog prava uređen Zakonom o osnovama svojinskopravnih odnosa. Držalac stvari uživa pravnu zaštitu svoje državine prema trećim licima, nezavisno od toga da li ima pravo na državinu. Pored toga, državina pod zakonom propisanim uslovima predstavlja osnov za sticanje prava svojine održajem."
+        },
+        {
+          "type": "p",
+          "text": "Prema Zakonu o osnovama svojinskopravnih odnosa, zakoniti i savesni držalac nepokretnosti stiče pravo svojine održajem protekom deset godina. Raniji Zakon o državnom premeru i katastru za lice upisano kao držalac stvarao je zakonsku pretpostavku savesnosti i zakonitosti državine. Na taj način, upis u katastar imao je značaj i za način računanja roka za održaj."
+        },
+        {
+          "type": "p",
+          "text": "Istovremeno, prava trećih lica bila su zaštićena mogućnošću da spreče upis prava svojine u korist držaoca podnošenjem isprava kojima dokazuju svoje pravo svojine na predmetnom zemljištu."
+        },
+        {
+          "type": "p",
+          "text": "Novim zakonskim rešenjem ovaj mehanizam je napušten. Umesto da upis državine, pod uslovima propisanim ranijim zakonom, predstavlja osnov za kasniji upis svojine, od upisanog držaoca sada se zahteva da samostalno dokaže pravo svojine odgovarajućim ispravama, uz pretnju brisanja njegovog upisa ukoliko to ne učini u zakonskom roku."
+        },
+        {
+          "type": "p",
+          "text": "Posebno je problematično što obrazloženje Predloga zakona ne pruža uverljive razloge za ovakvu promenu, niti objašnjava zbog čega je bilo potrebno ukinuti raniji mehanizam i kakav će biti pravni položaj lica koja su već bila upisana kao držaoci zemljišta."
+        },
+        {
+          "type": "h",
+          "text": "Šta se dešava sa zemljištem nakon brisanja držaoca?"
+        },
+        {
+          "type": "p",
+          "text": "Posledice ovakvog zakonskog rešenja naročito su ozbiljne u područjima u kojima prilikom osnivanja katastra nepokretnosti nije postojala nikakva ranija javna evidencija o nepokretnostima i pravima na njima."
+        },
+        {
+          "type": "p",
+          "text": "Naime, postoje područja u kojima su pojedine katastarske parcele generacijama bile u posedu jedne porodice, ponekad i duže od sto godina. U takvim slučajevima nije neobično da sadašnji držaoci ne raspolažu nikakvim ispravama kojima bi mogli da dokažu svoje pravo svojine. Upravo je za takve situacije raniji zakon predviđao mogućnost upisa državine, koja je protekom vremena i pod propisanim uslovima mogla da preraste u pravo svojine."
+        },
+        {
+          "type": "p",
+          "text": "Izmenama zakona ova lica stavljena su u znatno nepovoljniji položaj. Umesto da im upis državine predstavlja pravnu sigurnost i osnov za kasniji upis svojine, od njih se sada zahteva da dokažu pravo koje, zbog istorijskih okolnosti i nepostojanja ranijih evidencija, često nikada nisu ni mogla da dokažu odgovarajućom ispravom."
+        },
+        {
+          "type": "p",
+          "text": "U protivnom, njihov upis se briše. Time se otvara pitanje ne samo pravne sudbine evidentirane državine već i samog prava svojine na zemljištu."
+        },
+        {
+          "type": "p",
+          "text": "Naime, Zakon o državnom premeru i katastru definiše katastarsku parcelu kao osnovnu katastarsku teritorijalnu jedinicu koja predstavlja deo zemljišta u katastarskoj opštini, određen granicom (međom) i označen jedinstvenim brojem, na kome postoji pravo svojine."
+        },
+        {
+          "type": "p",
+          "text": "Iz takve zakonske definicije proizlazi da katastarska parcela, kao predmet evidencije, podrazumeva postojanje prava svojine. Međutim, šta se događa kada se iz katastra izbriše držalac, a ne postoji drugo lice koje je upisano kao vlasnik niti lice koje raspolaže ispravama podobnim za upis?"
+        },
+        {
+          "type": "p",
+          "text": "U praksi se nakon brisanja držaoca pojavljuju upisi poput „vlasnik nije utvrđen“. Takvo rešenje otvara ozbiljno pitanje usklađenosti katastarske evidencije sa zakonskim konceptom katastarske parcele, ali i pitanje pravne sudbine zemljišta na kome je prethodno bila evidentirana državina."
+        },
+        {
+          "type": "p",
+          "text": "Ovaj problem nije samo tehničke prirode. On ima neposredne posledice po mogućnost ostvarivanja prava pred sudom. Naime, upisani držalac bi, u načelu, mogao da pokrene parnični postupak radi utvrđenja prava svojine na zemljištu i da svoje pravo dokazuje pred sudom. Međutim, ako je njegov upis prethodno izbrisan, a zakon ne određuje ko postaje vlasnik zemljišta nakon brisanja držaoca, postavlja se pitanje protiv koga bi takva tužba uopšte trebalo da bude usmerena."
+        },
+        {
+          "type": "p",
+          "text": "Drugim rečima, zakonodavac je propisao brisanje upisanog držaoca, ali nije na odgovarajući način uredio pravnu sudbinu zemljišta nakon tog brisanja, niti je obezbedio jasan mehanizam putem kojeg bi lice koje je decenijama držalo zemljište u posedu moglo da ostvari sudsku zaštitu svog prava."
+        },
+        {
+          "type": "p",
+          "text": "Posebno je apsurdna situacija u kojoj je upisani držalac tokom celog desetogodišnjeg perioda nesmetano vršio državinu na zemljištu. Ukoliko su ispunjeni zakonski uslovi za sticanje prava svojine redovnim održajem, protekom tog perioda držalac je već mogao steći pravo svojine na nepokretnosti. Međutim, upravo u trenutku kada je protekao rok u kojem je mogao steći pravo svojine održajem, katastar može da izbriše njegov upis državine zato što nije dostavio isprave kojima dokazuje pravo svojine."
+        },
+        {
+          "type": "p",
+          "text": "Tako se dolazi do paradoksalne situacije: lice koje je, prema pravilima stvarnog prava, moglo steći pravo svojine održajem, istovremeno gubi svoj upis u katastru zbog toga što nije raspolagalo ispravama o tom istom pravu. Umesto da protek vremena i nesmetano vršenje državine dovedu do pravne sigurnosti, zakonsko rešenje proizvodi upravo suprotan efekat."
+        },
+        {
+          "type": "h",
+          "text": "Zaključak"
+        },
+        {
+          "type": "p",
+          "text": "Suština problema nije u tome što zakonodavac zahteva dokazivanje prava svojine. Takav zahtev je, sam po sebi, legitiman. Problem je u tome što je ukinut raniji mehanizam koji je upravo bio namenjen rešavanju situacija u kojima odgovarajuće isprave nisu postojale, a da pritom nije uspostavljen odgovarajući alternativni mehanizam."
+        },
+        {
+          "type": "p",
+          "text": "Posledica je da lica koja su upisana kao držaoci zemljišta, i koja su u pojedinim slučajevima tu državinu nasledila kroz više generacija, mogu izgubiti upis u katastar bez jasnog odgovora na pitanje kome zemljište nakon toga pripada i na koji način mogu da zaštite svoje pravo."
+        },
+        {
+          "type": "p",
+          "text": "Tako je institut koji je prvobitno trebalo da omogući postepeno sređivanje imovinskopravnih odnosa, umesto da dovede do pravne sigurnosti, postao izvor nove pravne neizvesnosti."
+        }
+      ]
+    },
+    "en": {
+      "title": "Registration of a Possessor of Land – A Legal Concept the Legislator Failed to Understand",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "As a general rule, ownership of real estate in the Republic of Serbia is acquired by registration in the public real estate register – the Real Estate Cadastre. However, the Cadastre's role as the single public register of real estate is relatively recent. Beginning in the 1990s, real estate records were gradually transferred from the land registry, deeds register and land cadastre systems into the Real Estate Cadastre, on a cadastral-municipality-by-cadastral-municipality basis. This process was not completed until after 2010."
+        },
+        {
+          "type": "p",
+          "text": "The primary objective of transferring the existing records into the Real Estate Cadastre was to establish a comprehensive and accurate register, covering both information about real estate and the rights attached to it. In order to achieve this objective, the procedure for establishing the Real Estate Cadastre allowed, in certain circumstances, for simplified registration of ownership, while in other cases the Law on State Survey and Cadastre provided for the possibility of registering a person as the possessor of real estate."
+        },
+        {
+          "type": "p",
+          "text": "Registration of a possessor was carried out, among other cases, in respect of buildings constructed without a building permit, separate parts of such buildings, as well as land – cadastral plots – for which the previous records did not contain adequate information about the relevant rights."
+        },
+        {
+          "type": "p",
+          "text": "As regards land, registration of a possessor primarily served as a means of recording the factual situation in circumstances where no previous real estate register existed and the persons in possession of the land did not hold documents, such as contracts or other legal instruments, on the basis of which they could seek direct registration of ownership."
+        },
+        {
+          "type": "p",
+          "text": "The legislator also provided for a mechanism through which the temporary registration of a possessor could be converted into registration of ownership. This was possible in two situations."
+        },
+        {
+          "type": "p",
+          "text": "First, the possessor could be registered as the owner if they submitted to the Cadastre documents suitable for registration of ownership, such as an acquisition agreement, a court decision or a decision issued by a competent authority."
+        },
+        {
+          "type": "p",
+          "text": "Second, the law provided for the possibility of registering ownership in favour of a person registered as the possessor after five years had elapsed from the date on which the Real Estate Cadastre was established, provided that no other person had, in the meantime, submitted documents seeking registration of ownership over the same property."
+        },
+        {
+          "type": "p",
+          "text": "Accordingly, registration of a possessor of land was conceived as a temporary solution which, upon expiry of the statutory period and subject to the prescribed conditions, was intended to lead to final registration of ownership."
+        },
+        {
+          "type": "p",
+          "text": "In addition, the law recognised a person registered as the possessor as a bona fide and lawful possessor from the date of registration in the Cadastre. This was particularly significant for the acquisition of ownership by acquisitive prescription, since registration in the Cadastre created a statutory presumption that the requirements for ordinary acquisitive prescription had been met, namely the acquisition of ownership upon expiry of a ten-year period, in accordance with the Law on the Fundamentals of Property Law Relations."
+        },
+        {
+          "type": "p",
+          "text": "Viewed in general terms, the institution of registration of a possessor had a clear justification. Its purpose was to enable the recording of the factual situation and, subject to certain conditions, the acquisition and registration of ownership by persons who did not possess documentary evidence of their title, on the assumption that their possession would not be challenged within the statutory period."
+        },
+        {
+          "type": "p",
+          "text": "This legislative solution was consistent with the objective pursued by establishing a single real estate register. In areas where no previous records existed, or where such records were incomplete, it was entirely possible for individuals to have possessed land for generations, or even for more than a century, without holding documents capable of proving their ownership. In such circumstances, requiring ownership to be established by means of appropriate documentary evidence would often have been practically impossible."
+        },
+        {
+          "type": "h",
+          "text": "Changes to the Legal Framework and the Abolition of the Possibility of Acquiring Ownership"
+        },
+        {
+          "type": "p",
+          "text": "In 2018, the Law on the Procedure for Registration in the Real Estate Cadastre and the Cadastre of Infrastructure Lines was enacted with the aim of improving the efficiency of the cadastral system, particularly the procedure for registering rights and other relevant information in the Cadastre. Despite the public consultation process and the objections raised by members of the legal community, the proposed legislative solutions largely retained the approach set out in the draft law."
+        },
+        {
+          "type": "p",
+          "text": "One of the most significant changes concerned precisely the legal position of persons registered as possessors of land."
+        },
+        {
+          "type": "p",
+          "text": "The new legal framework abolished the possibility for a registered possessor, subject to the conditions prescribed by the previous Law on State Survey and Cadastre, to seek registration of ownership after five years solely on the basis that their possession had been recorded in the Cadastre."
+        },
+        {
+          "type": "p",
+          "text": "In the author's view, this shift in approach is the result of a failure to understand the purpose and legal nature of the former institution of registration of possession. More importantly, by changing the legal framework without introducing appropriate transitional provisions for persons who had already been registered as possessors, the legislator created considerable legal uncertainty as to their legal position and their ability to acquire ownership in the future."
+        },
+        {
+          "type": "h",
+          "text": "The Legal Nature of Possession and the Position of a Registered Possessor"
+        },
+        {
+          "type": "p",
+          "text": "Possession is a property-law institution governed by the Law on the Fundamentals of Property Law Relations. A possessor enjoys legal protection of their possession against third parties, irrespective of whether they are entitled to possess the property. In addition, subject to the conditions prescribed by law, possession constitutes a basis for acquiring ownership by acquisitive prescription."
+        },
+        {
+          "type": "p",
+          "text": "Under the Law on the Fundamentals of Property Law Relations, a lawful and bona fide possessor of immovable property acquires ownership by acquisitive prescription after ten years. The former Law on State Survey and Cadastre established a statutory presumption that a person registered as a possessor held the property lawfully and in good faith. Consequently, registration in the Cadastre was also relevant to the calculation of the acquisitive prescription period."
+        },
+        {
+          "type": "p",
+          "text": "At the same time, the rights of third parties were protected by allowing them to prevent registration of ownership in favour of the possessor by submitting documents evidencing their ownership of the land in question."
+        },
+        {
+          "type": "p",
+          "text": "The new legislative framework abandoned this mechanism. Instead of registration of possession, subject to the conditions prescribed by the former law, serving as a basis for subsequent registration of ownership, a registered possessor is now required to independently establish ownership by submitting appropriate documentary evidence, failing which their registration is liable to be deleted upon expiry of the statutory time limit."
+        },
+        {
+          "type": "p",
+          "text": "It is particularly problematic that the explanatory memorandum to the Draft Law provides no convincing justification for this change. Nor does it explain why it was necessary to abolish the former mechanism or clarify the legal position of persons who had already been registered as possessors of land."
+        },
+        {
+          "type": "h",
+          "text": "What Happens to the Land After the Possessor's Registration Is Deleted?"
+        },
+        {
+          "type": "p",
+          "text": "The consequences of this legislative solution are particularly serious in areas where no previous public records of real estate or the rights attached to it existed when the Real Estate Cadastre was established."
+        },
+        {
+          "type": "p",
+          "text": "There are areas in which certain cadastral plots have been in the possession of the same family for generations, sometimes for more than a hundred years. In such cases, it is not unusual for current possessors to have no documents whatsoever by which they could establish their ownership. It was precisely for such situations that the former law provided for the possibility of registering possession, which, over time and subject to the prescribed conditions, could develop into ownership."
+        },
+        {
+          "type": "p",
+          "text": "The legislative amendments placed these persons in a considerably less favourable position. Instead of their registration of possession providing legal certainty and a basis for subsequent registration of ownership, they are now required to prove a right which, due to historical circumstances and the absence of previous records, they may never have been able to establish by means of documentary evidence."
+        },
+        {
+          "type": "p",
+          "text": "Otherwise, their registration is deleted. This raises questions not only as to the legal fate of the recorded possession, but also as to ownership of the land itself."
+        },
+        {
+          "type": "p",
+          "text": "The Law on State Survey and Cadastre defines a cadastral parcel as the basic cadastral territorial unit, representing a part of land within a cadastral municipality, delineated by boundaries and identified by a unique number, over which ownership exists."
+        },
+        {
+          "type": "p",
+          "text": "It follows from this statutory definition that a cadastral parcel, as an object of registration, presupposes the existence of ownership. But what happens when a possessor is deleted from the Cadastre and there is no other person registered as the owner, nor anyone holding documents suitable for registration?"
+        },
+        {
+          "type": "p",
+          "text": "In practice, following deletion of the possessor's registration, entries such as “owner not determined” may appear. Such a solution raises serious questions as to the consistency of the cadastral records with the statutory concept of a cadastral parcel, as well as the legal status of land over which possession had previously been recorded."
+        },
+        {
+          "type": "p",
+          "text": "This is not merely a technical issue. It has direct implications for the ability to seek judicial protection. In principle, a registered possessor could initiate civil proceedings seeking a declaration of ownership of the land and establish their title before the court. However, if their registration has already been deleted and the law does not specify who becomes the owner of the land following that deletion, the question arises as to whom such a claim should be brought in the first place."
+        },
+        {
+          "type": "p",
+          "text": "In other words, the legislator prescribed the deletion of the registered possessor but failed adequately to regulate the legal status of the land following such deletion, or to provide a clear mechanism through which a person who has been in possession of land for decades could obtain judicial protection of their rights."
+        },
+        {
+          "type": "p",
+          "text": "An especially absurd situation arises where the registered possessor has remained in uninterrupted possession of the land throughout the entire ten-year period. If all statutory requirements for acquiring ownership by ordinary acquisitive prescription are met, the possessor may already have acquired ownership of the property upon expiry of that period. However, it is precisely when the period within which ownership could have been acquired by acquisitive prescription expires that the Cadastre may delete the registration of possession because the possessor has failed to submit documents proving ownership."
+        },
+        {
+          "type": "p",
+          "text": "This leads to a paradoxical situation: a person who may have acquired ownership by acquisitive prescription under the rules of property law simultaneously loses their registration in the Cadastre because they do not possess documentary evidence of that very right. Instead of the passage of time and uninterrupted possession resulting in legal certainty, the legislative solution produces precisely the opposite effect."
+        },
+        {
+          "type": "h",
+          "text": "Conclusion"
+        },
+        {
+          "type": "p",
+          "text": "The essence of the problem is not that the legislator requires ownership to be proven. Such a requirement is, in itself, legitimate. The problem is that the former mechanism, which was specifically designed to address situations in which appropriate documents did not exist, was abolished without establishing an adequate alternative."
+        },
+        {
+          "type": "p",
+          "text": "As a result, persons registered as possessors of land, some of whom may have inherited that possession over several generations, may lose their registration in the Cadastre without any clear answer as to who owns the land thereafter or how they can protect their rights."
+        },
+        {
+          "type": "p",
+          "text": "Thus, an institution originally intended to facilitate the gradual resolution of property relations has, instead of bringing about legal certainty, become a source of further legal uncertainty."
+        }
+      ]
+    }
+  },
+  {
     "slug": "pledge-and-retention",
     "date": "2025-08-28",
     "author": "Ivan Petrović",

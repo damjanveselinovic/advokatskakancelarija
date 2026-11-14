@@ -57,10 +57,10 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
             <div className="hero-side hero-in hero-in-side">
               <div className="hero-coin" aria-hidden="true">
                 <Image
-                  src="/logo-emblem.png"
+                  src="/newlogo2.png"
                   alt=""
-                  width={640}
-                  height={640}
+                  width={1254}
+                  height={1254}
                   quality={90}
                   sizes="(max-width: 899px) 220px, 480px"
                   priority

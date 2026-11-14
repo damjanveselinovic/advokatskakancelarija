@@ -107,8 +107,7 @@ html.menu-open {
   width: 36px;
   height: 36px;
   display: block;
-  object-fit: cover;
-  clip-path: circle(46.5% at 49.5% 50.2%);
+  object-fit: contain;
 }
 .monogram {
   display: inline-grid;

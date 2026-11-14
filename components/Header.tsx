@@ -97,7 +97,7 @@ export default function Header({ lang, brand, nav }: Props) {
             <span className="logo-ring">
               <Image
                 ref={img}
-              src="/newlogo.png"
+              src="/newlogo2.png"
               alt=""
               width={72}
               height={72}

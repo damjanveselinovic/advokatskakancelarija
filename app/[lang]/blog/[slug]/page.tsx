@@ -3,12 +3,12 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import RichText from "@/components/RichText";
-import { articles, excerpt, formatDate, getArticle, getArticles, type Block } from "@/content/blog";
+import { excerpt, formatDate, getArticle, getArticles, type Block } from "@/lib/blog";
 import { content, isLocale } from "@/content/site";
 
 export function generateStaticParams({ params }: { params: { lang: string } }) {
   if (!isLocale(params.lang)) return [];
-  return articles.map((a) => ({ slug: a.slug }));
+  return getArticles().map((a) => ({ slug: a.slug }));
 }
 
 export async function generateMetadata({ params }: PageProps<"/[lang]/blog/[slug]">): Promise<Metadata> {

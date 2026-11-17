@@ -1,0 +1,76 @@
+# Pages CMS (https://pagescms.org) – podešavanje za blog.
+# Svaki članak je jedan JSON fajl u content/blog/. Save snima direktno na izabranu granu.
+# Sajt čita sve fajlove iz tog foldera pri buildu (lib/blog.ts), bez ručnog upisa u listu.
+# Tekstovi se čuvaju kao Markdown (pasusi, podnaslovi, liste, linkovi, **bold**, *kurziv*).
+
+content:
+  - name: articles
+    label: Članci
+    type: collection
+    path: content/blog
+    format: json
+
+    # Ime fajla je ujedno i adresa članka (/sr/blog/<ime>, /en/blog/<ime>).
+    # Predlaže se iz srpskog naslova pri kreiranju; polje za ime se vidi samo tada,
+    # pa se može ispraviti pre prvog snimanja. Posle toga ime (i adresa) ostaju
+    # nepromenjeni, čak i kad se naslov menja.
+    filename:
+      template: "{primary}.json"
+      field: create
+
+    # Bez preimenovanja i brisanja kroz CMS (stabilne adrese); brisanje ide kroz Git.
+    operations:
+      create: true
+      rename: false
+      delete: false
+
+    view:
+      fields: [title_sr, date]
+      primary: title_sr
+      sort: [date, title_sr]
+      default:
+        sort: date
+        order: desc
+
+    fields:
+      - name: date
+        label: Datum
+        type: date
+        required: true
+        description: Datum objave (bez sata). Određuje redosled na blogu, najnoviji je prvi.
+        options:
+          format: yyyy-MM-dd
+
+      - name: title_sr
+        label: Naslov na srpskom
+        type: string
+        required: true
+        description: Iz ovog naslova nastaje ime fajla i adresa članka (samo pri prvom snimanju).
+
+      - name: body_sr
+        label: Tekst na srpskom
+        type: rich-text
+        required: true
+        options:
+          format: markdown
+          media: false
+
+      - name: title_en
+        label: Naslov na engleskom
+        type: string
+        required: true
+
+      - name: body_en
+        label: Tekst na engleskom
+        type: rich-text
+        required: true
+        options:
+          format: markdown
+          media: false
+
+      - name: author
+        label: Autor
+        type: string
+        default: Ivan Petrović
+        required: true
+        description: Zajednički za oba jezika.

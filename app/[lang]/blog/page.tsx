@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { excerpt, formatDate, getArticles } from "@/content/blog";
+import { excerpt, formatDate, getArticles } from "@/lib/blog";
 import { content, isLocale } from "@/content/site";
 
 export async function generateMetadata({ params }: PageProps<"/[lang]/blog">): Promise<Metadata> {

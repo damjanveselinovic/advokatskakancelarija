@@ -33,7 +33,7 @@
 
 - Sadržaj iz `Tekst za sajt.docx` (SR i EN): početna je pregled; stranica „O kancelariji i timu“ (`/about`, biografije sa sidrima); tri stranice oblasti rada (`/practice/<slug>`, liste 10/9/10 stavki) sa dugmetom za upit; forma i server koriste 3 oblasti. Ispravljeno „pojedincima i privrednim društvima“.
 
-- Naziv sajta „Advokatska kancelarija Petrović“ / „Petrović Law Office“ (zaglavlje, tab, futer); logo sa tankim kružnim okvirom; favicon iz `newlogo.png`; javni kontakt (adresa, telefon, office@petroviclaw.rs); otvoreni meni sa manjim tekstom.
+- Naziv sajta „Advokatska kancelarija Petrović“ / „Petrović Law Office“ (zaglavlje, tab, futer); logo sa tankim kružnim okvirom; favicon iz `newlogo2.png`; javni kontakt (adresa, telefon, office@petroviclaw.rs); otvoreni meni sa manjim tekstom.
 
 - Uvod: responzivna slika (`background6.jpg` ispod 900px), lokalni blur sloj prati tekst; `h1` u Palatino Linotype (sistemski font), velika slova.
 - Kontakt: tri jednaka bloka (adresa, telefon, mejl); modal doteran; isti `pfp` za oba profila tima.
@@ -62,7 +62,7 @@
 - Baner na stranicama oblasti rada: visina `clamp(260px, 23vw, 420px)` (ranije fiksnih 224px), vidi se oko 1,5× više fotografije na desktopu.
 - Stranica „O kancelariji i timu“: na telefonu ≈22px veći gornji razmak (`.about-top`); fotografija u uvodu je uklonjena.
 - Iz `Tekst za sajt 2.docx`: dve nove oblasti rada (`commercial-corporate` sa `/oblastiRada/privredno.jpg`, `intellectual-property` sa `/oblastiRada/intelektualno.jpg`; kartica = prvi pasus, stranica = svi pasusi iz dokumenta, bez liste usluga) i nove biografije Ivana i Mirjane Petrović (početna: prvi pasus, stranica „O kancelariji i timu“: ceo tekst), SR i EN. Mreža oblasti na desktopu je 3+2.
-- Blog: 5 članaka iz `Ivan Petrovic Blog.docx` (uklonjeni: katastar/premer i „Ima dana“ / BG UrbanLUX) u `content/blog.ts` (SR + EN, datum, autor; auto-sort po datumu). Pregled u stilu novina (`/[lang]/blog`), članak `/[lang]/blog/[slug]` sa trakom „Nazad na blog“, obostrano poravnatim tekstom i menijem „Ostali članci“ (desktop: sticky, lista se skroluje zasebno uz `data-lenis-prevent` + `overscroll-behavior-y: contain`; telefon: ispod teksta). Novi članak = novi objekat u `articles`.
+- Blog: 5 članaka iz `Ivan Petrovic Blog.docx` (uklonjeni: katastar/premer i „Ima dana“ / BG UrbanLUX) u `content/blog/*.json` (SR + EN, datum, autor; auto-sort po datumu; uređuje se kroz Pages CMS, vidi `.pages.yml`). Pregled u stilu novina (`/[lang]/blog`), članak `/[lang]/blog/[slug]` sa trakom „Nazad na blog“, obostrano poravnatim tekstom i menijem „Ostali članci“ (desktop: sticky, lista se skroluje zasebno uz `data-lenis-prevent` + `overscroll-behavior-y: contain`; telefon: ispod teksta). Novi članak = novi objekat u `articles`.
 
 ## Sledeći koraci
 - Uneti prave sadržaje u `content/site.ts`.

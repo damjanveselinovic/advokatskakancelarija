@@ -103,7 +103,7 @@ export type Content = {
     successNote: string;
     errors: { generic: string; config: string; invalid: string; rate: string };
   };
-  blog: { title: string; readMore: string; backToBlog: string; authorLabel: string; otherTitle: string };
+  blog: { title: string; readMore: string; backToBlog: string; authorLabel: string; otherTitle: string; editorLink: string };
   footer: { text: string };
 };
 
@@ -384,6 +384,7 @@ export const content: Record<Locale, Content> = {
       backToBlog: "Nazad na blog",
       authorLabel: "Autor",
       otherTitle: "Ostali članci",
+      editorLink: "Uređivanje bloga",
     },
     footer: { text: "© ADVOKATSKA KANCELARIJA PETROVIĆ" },
   },
@@ -662,6 +663,7 @@ export const content: Record<Locale, Content> = {
       backToBlog: "Back to blog",
       authorLabel: "Author",
       otherTitle: "Other articles",
+      editorLink: "Blog editor",
     },
     footer: { text: "© PETROVIĆ LAW OFFICE" },
   },
@@ -669,3 +671,7 @@ export const content: Record<Locale, Content> = {
 
 export const isLocale = (v: string): v is Locale =>
   (locales as readonly string[]).includes(v);
+
+/** Pages CMS editor bloga (link na dnu liste članaka). */
+export const blogEditorUrl =
+  "https://app.pagescms.org/damjanveselinovic/advokatskakancelarija/main/collection/articles";

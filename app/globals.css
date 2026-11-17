@@ -1491,6 +1491,28 @@ html:has(dialog[open]) {
 .blog-item .blog-excerpt {
   max-width: 40em;
 }
+.blog-editor {
+  margin: 28px 0 0;
+  font-family: var(--ui);
+  font-size: 13px;
+  line-height: 1.4;
+}
+.blog-editor a {
+  color: var(--muted);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+  text-decoration-color: var(--line);
+}
+.blog-editor a:hover {
+  color: var(--olive);
+  text-decoration-color: currentColor;
+}
+.blog-editor a:focus-visible {
+  outline: 2px solid var(--olive);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
 @media (max-width: 899px) {
   .blog-page {
     padding-top: calc(var(--header-h) + 40px);

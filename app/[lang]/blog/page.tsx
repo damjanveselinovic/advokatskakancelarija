@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { excerpt, formatDate, getArticles } from "@/lib/blog";
-import { content, isLocale } from "@/content/site";
+import { blogEditorUrl, content, isLocale } from "@/content/site";
 
 export async function generateMetadata({ params }: PageProps<"/[lang]/blog">): Promise<Metadata> {
   const { lang } = await params;
@@ -60,6 +60,12 @@ export default async function BlogPage({ params }: PageProps<"/[lang]/blog">) {
             </li>
           ))}
         </ul>
+
+        <p className="blog-editor">
+          <a href={blogEditorUrl} target="_blank" rel="noopener noreferrer">
+            {c.blog.editorLink}
+          </a>
+        </p>
       </div>
     </section>
   );
